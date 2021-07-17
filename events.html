@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>events</title>
+        <style>
+            #parenr{
+                width: 300px;
+                height: 300px;
+                border: 1px solid red;
+                color: red;
+                text-align: center;
+            }
+            #child{
+                width: 250px;
+                height: 200px;
+                border: 1px solid green;
+                margin-left: 20px;
+            }
+            #subchild{
+                width: 170px;
+                height: 100px;
+                border: 1px solid blue;
+                margin-left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="parenr">
+            <h1>parent</h1>
+            <div id="child">
+                <h1>child</h1>
+                <div id="subchild">
+                    <h1>subchild</h1>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+     
+    //  let parenr = document.querySelector("#parenr");
+    //     let child = document.querySelector("#child");
+    //     let subchild = document.querySelector("#subchild");
+
+    //     parenr.addEventListener("click",()=>{
+    //         console.log("parenr");
+    //     },true);
+
+    //     child.addEventListener("click",()=>{
+    //         // e.stopPropagation();
+    //         console.log("child");
+    //     },true);
+
+    //     subchild.addEventListener("click",()=>{
+    //         console.log("subchild");
+    //     },true);
+
+    let parenr = document.querySelector("#parenr");
+    let child = document.querySelector("#child");
+    let subchild = document.querySelector("#subchild");
+
+    parenr.addEventListener("click",()=>{
+        console.log("parenr");
+    },true);
+    child.addEventListener("click",(e)=>{
+        e.stopPropagation();
+        console.log("child");
+    },true);
+    subchild.addEventListener("click",()=>{
+        console.log("subchild");
+    },true);
+    </script>
+
+</html>

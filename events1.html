@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+    <style>
+        .parent{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            color: red;
+            text-align: center;
+            position: relative;
+        }
+        .child{
+            width: 250px;
+            height: 200px;
+            border: 1px solid green;
+            position: absolute;
+            left: 20px;
+        }
+        .subchild{
+            width: 170px;
+            height: 100px;
+            border: 1px solid blue;
+            position: absolute;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1>parent</h1>
+          <div class="child">
+              <h1>child</h1>
+                 <div class="subchild">
+                     <h1>subchild</h1>
+                 </div>
+          </div>
+    </div>
+</body>
+
+<script>
+
+ let parent = document.querySelector("#parent");
+ let child = document.querySelector("#child");
+ let subchild = document.querySelector("#subchild");
+
+ parent.addEventListener("click",()=>{
+     console.log("parent")
+ })
+</script>
+
+</html>
